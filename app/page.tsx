@@ -51,7 +51,7 @@ export default function CleanAnimatedPage() {
         className="relative z-10 w-full max-w-3xl bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-10 md:p-16"
       >
         <motion.h1 variants={item} className="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">
-          Clean, simple animated page built with Love!
+          Hello World!
         </motion.h1>
 
         <motion.p variants={item} className="mt-4 text-slate-600 max-w-2xl">
