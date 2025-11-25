@@ -1,25 +1,32 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+const container: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.42, 0, 0.58, 1], // cubic-bezier array
+    },
+  },
+};
 
 export default function CleanAnimatedPage() {
-  const container = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] } },
-  };
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 flex items-center justify-center p-6">
       {/* Subtle floating shapes */}
@@ -82,7 +89,7 @@ export default function CleanAnimatedPage() {
   );
 }
 
-function Feature({ title, desc }) {
+function Feature({ title, desc }: { title: string; desc: string }) {
   return (
     <div className="p-4 rounded-lg border border-slate-100 bg-white">
       <h4 className="font-semibold text-slate-800">{title}</h4>
